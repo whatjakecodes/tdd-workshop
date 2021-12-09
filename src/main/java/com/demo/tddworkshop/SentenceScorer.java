@@ -2,6 +2,6 @@ package com.demo.tddworkshop;
 
 public class SentenceScorer {
     public int score(String input) {
-        return 11;
+        return input.replace(" ", "").length();
     }
 }
