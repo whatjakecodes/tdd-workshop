@@ -35,4 +35,17 @@ class SentenceScorerTest {
         // assert: output is 2pts * (3char + 9char + 5char)
         assertThat(output).isEqualTo(2 * (3+9+5));
     }
+
+    @Test
+    void punctuationCharacters_score3PointsEach() {
+        SentenceScorer sentenceScorer = new SentenceScorer();
+        // arrange: a string with only punctuation marks
+        String input = ",,!!-";
+
+        // act: when input is scored
+        int output = sentenceScorer.score(input);
+
+        // assert: output is 15
+        assertThat(output).isEqualTo(3 * 5);
+    }
 }

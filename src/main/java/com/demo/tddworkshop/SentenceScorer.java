@@ -1,7 +1,5 @@
 package com.demo.tddworkshop;
 
-import java.util.stream.Collectors;
-
 public class SentenceScorer {
     public int score(String input) {
         Integer score = input.chars().map(character -> {
@@ -11,8 +9,11 @@ public class SentenceScorer {
             if (Character.isUpperCase(character)) {
                 return 2;
             }
+            if (Character.isWhitespace(character)) {
+                return 0;
+            }
 
-            return 0;
+            return 3;
         }).sum();
 
         return score;
