@@ -8,6 +8,8 @@ class SentenceScorerTest {
     @Test
     void lowercaseCharacters_score1PointEach() {
         // arrange: a string with 11 lowercase characters
+        SentenceScorer sentenceScorer = new SentenceScorer();
+        String input = "scenario one";
 
         // act: when input is scored
         int output = sentenceScorer.score(input);
