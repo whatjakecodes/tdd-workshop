@@ -10,10 +10,9 @@ class SentenceScorerTest {
         // arrange: a string with 11 lowercase characters
 
         // act: when input is scored
+        int output = sentenceScorer.score(input);
 
         // assert: output is 11
         assertThat(output).isEqualTo(11);
-
-        // where does "output" come from?
     }
 }
