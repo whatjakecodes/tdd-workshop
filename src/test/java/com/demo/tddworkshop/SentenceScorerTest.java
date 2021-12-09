@@ -22,4 +22,17 @@ class SentenceScorerTest {
         // assert: output is 3
         assertThat(output2).isEqualTo(3);
     }
+
+    @Test
+    void uppercaseCharacters_score2PointsEach() {
+        SentenceScorer sentenceScorer = new SentenceScorer();
+        // arrange: a string with all uppercase characters
+        String input = "ALL UPPERCASE WORDS";
+
+        // act: when input is scored
+        int output = sentenceScorer.score(input);
+
+        // assert: output is 2pts * (3char + 9char + 5char)
+        assertThat(output).isEqualTo(2 * (3+9+5));
+    }
 }
